@@ -4,6 +4,7 @@ import { FighterShip } from '../fighter-ship';
 import { BomberShip } from '../bomber-ship';
 import { Pilot } from '../pilot';
 import { PilotRoomComponent } from '../pilot-room/pilot-room.component';
+import { SpaceShipService } from '../space-ship.service';
 
 @Component({
   selector: 'app-hangar',
@@ -14,11 +15,11 @@ export class HangarComponent implements OnInit {
 
   selectedPilot: Pilot = null;
 
-  spaceShips: SpaceShip[] = [];
+  spaceShips = this.spaceShipService.hangarShips;
 
   @ViewChild(PilotRoomComponent) pilotRoom: PilotRoomComponent;
 
-  constructor() { }
+  constructor(private spaceShipService: SpaceShipService) {}
 
   deassignPilot(spaceShip: SpaceShip) {
     this.pilotRoom.pilotReturn(spaceShip.pilot);
