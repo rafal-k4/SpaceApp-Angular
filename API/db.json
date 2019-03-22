@@ -1,0 +1,22 @@
+{
+  "pilots": [
+    {
+      "id": 1,
+      "firstName": "Janina",
+      "lastName": "Rambo",
+      "imageUrl": "/assets/pilot1.jpg"
+    },
+    {
+      "id": 2,
+      "firstName": "Janusz",
+      "lastName": "Tracz",
+      "imageUrl": "/assets/pilot2.png"
+    },
+    {
+      "id": 3,
+      "firstName": "Karl",
+      "lastName": "Ahathon",
+      "imageUrl": null
+    }
+  ]
+}
