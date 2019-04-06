@@ -4,6 +4,8 @@ import { HangarComponent } from './hangar/hangar.component';
 import { EngineersRoomComponent } from './engineers-room/engineers-room.component';
 import { DestructionRoomComponent } from './destruction-room/destruction-room.component';
 import { DestructionGuard } from './destruction.guard';
+import { PilotResolver } from './pilot.resolver';
+import { PilotFormComponent } from './pilot-form/pilot-form.component';
 
 const routes: Routes = [
   {path: 'space',
@@ -13,7 +15,8 @@ const routes: Routes = [
     {path: 'destruction', component: DestructionRoomComponent, canActivate: [DestructionGuard]},
     {path: '', redirectTo: 'production', pathMatch: 'full'}
     ]
-  }
+  },
+  {path: 'space/pilots/:id', component: PilotFormComponent, resolve: {pilot: PilotResolver}}
 ];
 
 @NgModule({
