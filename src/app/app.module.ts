@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { A2sCommModule } from 'a2s-comm';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,8 +19,6 @@ import { BlackHoleComponent } from './black-hole/black-hole.component';
     HttpClientModule,
     BrowserModule,
     SpaceModule,
-
-    A2sCommModule,
     AppRoutingModule
   ],
   providers: [],

@@ -17,12 +17,6 @@
       "firstName": "Karl",
       "lastName": "Ahathon",
       "imageUrl": null
-    },
-    {
-      "id": 4,
-      "firstName": "No",
-      "lastName": "Name",
-      "imageUrl": "/assets/unknown-pilot.png"
     }
   ],
   "forbidden-names": [
