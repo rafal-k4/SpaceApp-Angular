@@ -14,7 +14,7 @@ export class SpaceImageDirective {
   }
 
   @HostListener('mousemove') zoomIn() {
-    this.zoom += 0.005;
+    this.zoom += 0.001;
   }
 
   @HostListener('mouseout') zoomOut() {
