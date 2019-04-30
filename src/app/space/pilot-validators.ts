@@ -10,7 +10,7 @@ export class PilotValidators {
 
   static pilotForbidden(formControl: FormControl) {
     if (!formControl.value) { return of(null); }
-    return ajax.get(`/api/forbidden-names?name=${formControl.value}`).pipe(
+    return ajax.get(`https://my-json-server.typicode.com/rafal-k4/FakeApi/forbidden-names?name=${formControl.value}`).pipe(
       map((ajaxResponse) => ajaxResponse.response[0] ? {pilotForbidden: true} : null)
     );
   }

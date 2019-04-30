@@ -12,13 +12,13 @@ export class PilotService {
   constructor(private http: HttpClient) { }
 
   getPilots(): Observable<Pilot[]> {
-    return this.http.get<PilotAttrs[]>('/api/pilots').pipe(
+    return this.http.get<PilotAttrs[]>('https://my-json-server.typicode.com/rafal-k4/FakeApi/pilots').pipe(
       map((data) => data.map((pilotAttrs) => new Pilot(pilotAttrs)))
     );
   }
 
   getPilot(id: number) {
-    return this.http.get<PilotAttrs>(`/api/pilots/${id}`).pipe(
+    return this.http.get<PilotAttrs>(`https://my-json-server.typicode.com/rafal-k4/FakeApi/pilots/${id}`).pipe(
        map((pilotAttrs) => new Pilot(pilotAttrs))
     );
   }
@@ -32,13 +32,13 @@ export class PilotService {
   }
 
   private createPilot(data: PilotAttrs): Observable<Pilot> {
-    return this.http.post<PilotAttrs>('/api/pilots', data).pipe(
+    return this.http.post<PilotAttrs>('https://my-json-server.typicode.com/rafal-k4/FakeApi/pilots', data).pipe(
       map((pilotAttrs) => new Pilot(pilotAttrs))
     );
   }
 
   private updatePilot(data: PilotAttrs): Observable<Pilot>{
-    return this.http.put<PilotAttrs>('/api/pilot/${data.id}', data).pipe(
+    return this.http.put<PilotAttrs>('https://my-json-server.typicode.com/rafal-k4/FakeApi/pilots/${data.id}', data).pipe(
       map((pilotAttrs) => new Pilot(pilotAttrs))
     );
   }
