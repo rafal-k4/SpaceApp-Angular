@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>SpaceApp</title>
-  <!-- defaultly base href was set to href="/" but for github pages running slash was deleted-->
-  <base href="">
+  <!-- by default base href was set to href="/" but for github pages running it is set to /SpaceApp-Angular => which is the git repository name-->
+  <base href="/SpaceApp-Angular">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -20,9 +20,10 @@
           // Remove the URL from sessionStorage.
           delete sessionStorage.redirect;
           // Check if we actually need to redirect.
+          console.log(redirect, location.href);
           if (redirect && redirect != location.href) {
             // We need to redirect to the URL the user was trying to access.
-            //history.replaceState(null, null, redirect);
+            history.replaceState(null, null, redirect);
           }
         })();
       </script>
