@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-planet-detector',
@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class PlanetDetectorComponent implements OnInit {
 
   constructor() { }
+
+  @HostListener('mousemove') update() {
+    console.log()
+  }
+
 
   ngOnInit() {
   }
