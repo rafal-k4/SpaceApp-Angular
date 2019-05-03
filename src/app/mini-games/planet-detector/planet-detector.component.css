@@ -1,0 +1,7 @@
+#detection-area{
+  height: 70vh;
+  border-style: dashed;
+  border-color: red;
+  background-image: url('/assets/noise.jpg');
+  background-size: cover;
+}
