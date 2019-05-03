@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PlanetDetectorComponent } from './planet-detector/planet-detector.component';
 
 const routes: Routes = [
-  {path: 'secret/planet-detector', component: PlanetDetectorComponent}
+  {path: 'games/planet-detector', component: PlanetDetectorComponent}
 ];
 
 @NgModule({

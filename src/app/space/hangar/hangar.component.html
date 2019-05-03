@@ -1,9 +1,7 @@
-<a routerLink="/secret/planet-detector" routerLinkActive="active">Test</a>
 
-<h1>Hangar</h1>
-
-<div class="row">
+<div class="row" style="padding: 20px;">
   <div class="col-6">
+    <h1>Hangar</h1>
     <app-space-ship *ngFor="let spaceShip of spaceShips | async" [spaceShip]="spaceShip">
       <button *ngIf="selectedPilot && !spaceShip.pilot" (click)="assignPilot(spaceShip)">Pilotuj</button>
       <button *ngIf="spaceShip.pilot" (click)="deassignPilot(spaceShip)">Opuść</button>
@@ -19,6 +17,3 @@
     <router-outlet></router-outlet>
   </div>
 </div>
-
-
-
