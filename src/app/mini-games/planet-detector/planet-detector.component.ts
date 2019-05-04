@@ -9,9 +9,9 @@ export class PlanetDetectorComponent implements OnInit {
 
   constructor() { }
 
-  @HostListener('document:mousemove', ['$event'])
-  update(x: number, y: number): void{
-    console.log(`${x} ${y}`);
+
+  onMouseMove(position: {x: number, y: number}): void{
+    console.log(`${position.x} ${position.y}`);
   }
 
 
