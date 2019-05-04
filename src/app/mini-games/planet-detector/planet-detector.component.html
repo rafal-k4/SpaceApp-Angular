@@ -1,11 +1,8 @@
 <div class="offset-1">
-    <h1 style="margin: 20px 0 20px 0;" >Planet Detector</h1>
+  <h1 style="margin: 20px 0 20px 0;">Planet Detector</h1>
 </div>
 
-<div id="detection-area" #detectionArea class="col-10 offset-1" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})">
-  <div #planet id="planet">
-
-  </div>
+<div class="col-10 offset-1 bordered">
+  <div #planet id="planet" (click) = "planetFound()"></div>
+  <div #detectionArea id="detection-area" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})"></div>
 </div>
-
-

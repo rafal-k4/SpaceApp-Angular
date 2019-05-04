@@ -21,6 +21,10 @@ export class PlanetDetectorComponent implements OnInit {
     console.log(this.distanceFromPlanet);
   }
 
+  planetFound(): void{
+    window.alert('found');
+  }
+
   CalculateDistanceFromPlanet(mousePosition: { x: number, y: number }, planetPosition: { x: number, y: number }): number {
     const verticalDist = planetPosition.x - mousePosition.x;
     const horizontalDist = planetPosition.y - mousePosition.y;
