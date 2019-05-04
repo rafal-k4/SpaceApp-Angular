@@ -5,3 +5,9 @@
   background-image: url('/assets/noise.jpg');
   background-size: cover;
 }
+#planet{
+  width: 50px;
+  height: 50px;
+  background: white;
+  position: absolute;
+}

@@ -2,6 +2,10 @@
     <h1 style="margin: 20px 0 20px 0;" >Planet Detector</h1>
 </div>
 
-<div id="detection-area" #detectionArea class="col-10 offset-1" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})"></div>
+<div id="detection-area" #detectionArea class="col-10 offset-1" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})">
+  <div #planet id="planet">
+
+  </div>
+</div>
 
 
