@@ -12,14 +12,18 @@ export class PlanetDetectorComponent implements OnInit {
   private planetCoordinates: { x: number, y: number };
   opacityValue = 1;
 
+  planetImgUrl: string;
+
   @ViewChild('detectionArea') detectionAreaElement: ElementRef;
   @ViewChild('planet') planetElement: ElementRef;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
+  constructor(private el: ElementRef, private renderer: Renderer2) {
+    this.planetImgUrl = './assets/planet.png';
+   }
 
   onMouseMove(position: { x: number, y: number }): void {
     this.distanceFromPlanet = this.CalculateDistanceFromPlanet(position, this.planetCoordinates);
-    this.opacityValue = 1 - (1 / (this.distanceFromPlanet * 0.03));
+    this.opacityValue = 1 - (1 / (this.distanceFromPlanet * 0.04));
   }
 
   planetFound(): void {
