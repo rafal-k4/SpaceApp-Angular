@@ -10,6 +10,7 @@ export class PlanetDetectorComponent implements OnInit {
   private dimensions;
   private distanceFromPlanet: number;
   private planetCoordinates: { x: number, y: number };
+  opacityValue = 1;
 
   @ViewChild('detectionArea') detectionAreaElement: ElementRef;
   @ViewChild('planet') planetElement: ElementRef;
@@ -18,12 +19,13 @@ export class PlanetDetectorComponent implements OnInit {
 
   onMouseMove(position: { x: number, y: number }): void {
     this.distanceFromPlanet = this.CalculateDistanceFromPlanet(position, this.planetCoordinates);
-    console.log(this.distanceFromPlanet);
+    this.opacityValue = 1 - (1 / (this.distanceFromPlanet * 0.03));
   }
 
-  planetFound(): void{
+  planetFound(): void {
     window.alert('found');
   }
+
 
   CalculateDistanceFromPlanet(mousePosition: { x: number, y: number }, planetPosition: { x: number, y: number }): number {
     const verticalDist = planetPosition.x - mousePosition.x;

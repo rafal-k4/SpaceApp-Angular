@@ -4,5 +4,5 @@
 
 <div class="col-10 offset-1 bordered">
   <div #planet id="planet" (click) = "planetFound()"></div>
-  <div #detectionArea id="detection-area" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})"></div>
+  <div #detectionArea id="detection-area" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})" [style.opacity]="opacityValue"></div>
 </div>
