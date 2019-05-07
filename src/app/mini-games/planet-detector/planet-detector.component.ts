@@ -41,9 +41,11 @@ export class PlanetDetectorComponent implements OnInit {
 
   ngOnInit() {
     this.dimensions = this.detectionAreaElement.nativeElement.getBoundingClientRect();
-    this.planetCoordinates = { x: this.dimensions.width * Math.random(), y: this.dimensions.height * Math.random() };
-    // TODO: make sure planet isnt spawning over the border
-    console.log(this.planetCoordinates);
+    this.planetCoordinates =
+    {
+      x: (this.dimensions.width - this.planetElement.nativeElement.width) * Math.random(),
+      y: (this.dimensions.height - this.planetElement.nativeElement.height) * Math.random()
+    };
 
     this.renderer.setStyle(this.planetElement.nativeElement, 'top', `${this.planetCoordinates.y}px`);
     this.renderer.setStyle(this.planetElement.nativeElement, 'left', `${this.planetCoordinates.x}px`);
