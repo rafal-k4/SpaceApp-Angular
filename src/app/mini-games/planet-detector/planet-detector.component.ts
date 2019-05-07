@@ -34,15 +34,15 @@ export class PlanetDetectorComponent implements OnInit {
 
 
   CalculateDistanceFromPlanet(mousePosition: { x: number, y: number }, planetPosition: { x: number, y: number }): number {
-    const verticalDist = planetPosition.x - mousePosition.x;
-    const horizontalDist = planetPosition.y - mousePosition.y;
+    const verticalDist = planetPosition.x - mousePosition.x + this.planetElement.nativeElement.width / 2;
+    const horizontalDist = planetPosition.y - mousePosition.y + this.planetElement.nativeElement.height / 2;
+    
     return Math.sqrt(Math.pow(verticalDist, 2) + Math.pow(horizontalDist, 2));
   }
 
   ngOnInit() {
     this.dimensions = this.detectionAreaElement.nativeElement.getBoundingClientRect();
-    this.planetCoordinates =
-    {
+    this.planetCoordinates = {
       x: (this.dimensions.width - this.planetElement.nativeElement.width) * Math.random(),
       y: (this.dimensions.height - this.planetElement.nativeElement.height) * Math.random()
     };
