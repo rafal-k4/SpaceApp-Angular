@@ -7,5 +7,6 @@
 
   <div #detectionArea id="detection-area" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})" [style.opacity]="opacityValue"></div>
   <img #planet id="planet" [src]='planetImgUrl' (click) = "planetFound()" [style.opacity]="invertedOpacityValue"/>
+  <label class="text-center WinnerTitle" *ngIf="GameFinished"> Win !</label>
 </div>
 
