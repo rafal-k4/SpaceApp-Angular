@@ -4,6 +4,8 @@
 
 <div class="col-10 offset-1 bordered">
   <!-- <div #planet id="planet" (click) = "planetFound()"></div> -->
-  <img #planet id="planet" [src]='planetImgUrl' (click) = "planetFound()" />
+
   <div #detectionArea id="detection-area" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})" [style.opacity]="opacityValue"></div>
+  <img #planet id="planet" [src]='planetImgUrl' (click) = "planetFound()" [style.opacity]="invertedOpacityValue"/>
 </div>
+

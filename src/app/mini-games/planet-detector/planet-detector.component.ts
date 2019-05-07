@@ -11,6 +11,7 @@ export class PlanetDetectorComponent implements OnInit {
   private distanceFromPlanet: number;
   private planetCoordinates: { x: number, y: number };
   opacityValue = 1;
+  invertedOpacityValue = 0;
 
   planetImgUrl: string;
 
@@ -23,7 +24,8 @@ export class PlanetDetectorComponent implements OnInit {
 
   onMouseMove(position: { x: number, y: number }): void {
     this.distanceFromPlanet = this.CalculateDistanceFromPlanet(position, this.planetCoordinates);
-    this.opacityValue = 1 - (1 / (this.distanceFromPlanet * 0.04));
+    this.invertedOpacityValue = (1 / (this.distanceFromPlanet * 0.02));
+    this.opacityValue = 1 - this.invertedOpacityValue;
   }
 
   planetFound(): void {
