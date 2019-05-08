@@ -5,8 +5,18 @@
 <div class="col-10 offset-1 bordered">
   <!-- <div #planet id="planet" (click) = "planetFound()"></div> -->
 
-  <div #detectionArea id="detection-area" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})" [style.opacity]="opacityValue"></div>
-  <img #planet id="planet" [src]='planetImgUrl' (click) = "planetFound()" [style.opacity]="invertedOpacityValue"/>
-  <label class="text-center WinnerTitle" *ngIf="GameFinished"> Win !</label>
-</div>
+  <div #detectionArea id="detection-area" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})"
+    [style.opacity]="opacityValue"></div>
+  <img #planet id="planet" [src]='planetImgUrl' (click)="planetFound()" [style.opacity]="invertedOpacityValue" />
+  <div class="text-center WinnerTitle" *ngIf="GameFinished">
+    <ul>
+      <li>
+        <label class="TextRed"> Win !</label>
+      </li>
+      <li>
+        <button type="button" class="btn btn-secondary" (click)="PrepareGame()"> Play Again </button>
+      </li>
+    </ul>
 
+  </div>
+</div>

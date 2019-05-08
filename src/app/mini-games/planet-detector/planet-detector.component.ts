@@ -54,6 +54,10 @@ export class PlanetDetectorComponent implements OnInit {
   }
 
   PrepareGame(): void {
+    this.GameFinished = false;
+    this.opacityValue = 1;
+    this.invertedOpacityValue = 0;
+
     this.planetCoordinates = {
       x: (this.dimensions.width - this.planetElement.nativeElement.width) * Math.random(),
       y: (this.dimensions.height - this.planetElement.nativeElement.height) * Math.random()

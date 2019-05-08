@@ -16,10 +16,12 @@
 }
 .WinnerTitle{
   position: absolute;
-  font-size: 7vh;
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
+}
+.TextRed{
   color: red;
   font-weight: 900;
+  font-size: 7vh;
 }
