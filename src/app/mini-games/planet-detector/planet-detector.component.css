@@ -38,14 +38,10 @@
 .aimY {
   width: 2px;
   height: 95%;
-
   transform: translateY(-50%);
-
 }
 .aimX{
   width: 95%;
   height: 2px;
-
   transform: translateX(-50%);
-
 }

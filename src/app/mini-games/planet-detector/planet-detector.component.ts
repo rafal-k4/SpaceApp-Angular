@@ -19,18 +19,26 @@ export class PlanetDetectorComponent implements OnInit {
 
   @ViewChild('detectionArea') detectionAreaElement: ElementRef;
   @ViewChild('planet') planetElement: ElementRef;
+  @ViewChild('aimX')  aimX: ElementRef;
+  @ViewChild('aimY') aimY: ElementRef;
 
   constructor(private el: ElementRef, private renderer: Renderer2) {
     this.planetImgUrl = './assets/planet.png';
   }
 
   onMouseMove(position: { x: number, y: number }): void {
+    this.MoveAim(position);
     if (this.GameFinished) {
       return;
     }
     this.distanceFromPlanet = this.CalculateDistanceFromPlanet(position, this.planetCoordinates);
     this.invertedOpacityValue = (1 / (this.distanceFromPlanet * 0.02));
     this.opacityValue = 1 - this.invertedOpacityValue;
+  }
+
+  MoveAim(position: { x: number; y: number; }) {
+    this.renderer.setStyle(this.aimX.nativeElement, 'top', `${position.y}px`);
+    this.renderer.setStyle(this.aimY.nativeElement, 'left', `${position.x}px`);
   }
 
   planetFound(): void {
