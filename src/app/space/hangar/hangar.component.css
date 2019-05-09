@@ -6,3 +6,8 @@ a {
 a.active {
   color: orange;
 }
+
+.planet-detector{
+  font-size: x-large;
+  margin-top: 15px;
+}

@@ -9,6 +9,7 @@ import { SpaceModule } from './space/space.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BlackHoleComponent } from './black-hole/black-hole.component';
+import { MiniGamesModule } from './mini-games/mini-games.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BlackHoleComponent } from './black-hole/black-hole.component';
     HttpClientModule,
     BrowserModule,
     SpaceModule,
+    MiniGamesModule,
     AppRoutingModule
   ],
   providers: [],

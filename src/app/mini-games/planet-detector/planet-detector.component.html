@@ -1,0 +1,26 @@
+<div class="offset-1">
+  <h1 style="margin: 20px 0 20px 0;">Planet Detector</h1>
+</div>
+
+  <div #aimX class="line-aim-centered aimX"></div>
+  <div #aimY class="line-aim-centered aimY"></div>
+
+<!-- <svg width="200%" height="200%" style="position: absolute; left: 100px; z-index: 1; overflow:hidden;">
+  <circle cx="50px" cy="50px" r="50px" fill="white" />
+  <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+</svg> -->
+
+<div class="col-10 offset-1 bordered">
+  <div #detectionArea id="detection-area" (mousemove)="onMouseMove({x: $event.layerX, y: $event.layerY})" [style.opacity]="opacityValue"></div>
+  <img #planet id="planet" [src]='planetImgUrl' (click)="planetFound()" [style.opacity]="invertedOpacityValue" />
+  <div class="text-center WinnerTitle" *ngIf="GameFinished">
+    <ul>
+      <li>
+        <label class="TextRed"> Win !</label>
+      </li>
+      <li>
+        <button type="button" class="btn btn-secondary" (click)="PrepareGame()"> Play Again </button>
+      </li>
+    </ul>
+  </div>
+</div>
