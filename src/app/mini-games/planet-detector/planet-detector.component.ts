@@ -37,8 +37,8 @@ export class PlanetDetectorComponent implements OnInit {
   }
 
   MoveAim(position: { x: number; y: number; }) {
-    this.renderer.setStyle(this.aimX.nativeElement, 'top', `${position.y}px`);
-    this.renderer.setStyle(this.aimY.nativeElement, 'left', `${position.x}px`);
+    this.renderer.setStyle(this.aimX.nativeElement, 'top', `${position.y + this.dimensions.top}px`);
+    this.renderer.setStyle(this.aimY.nativeElement, 'left', `${position.x + this.dimensions.left}px`);
   }
 
   planetFound(): void {
