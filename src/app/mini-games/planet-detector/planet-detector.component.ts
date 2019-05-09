@@ -16,6 +16,7 @@ export class PlanetDetectorComponent implements OnInit {
   GameFinished = false;
 
   planetImgUrl: string;
+  detectionAreaImage: string;
 
   @ViewChild('detectionArea') detectionAreaElement: ElementRef;
   @ViewChild('planet') planetElement: ElementRef;
@@ -24,6 +25,7 @@ export class PlanetDetectorComponent implements OnInit {
 
   constructor(private el: ElementRef, private renderer: Renderer2) {
     this.planetImgUrl = './assets/planet.png';
+    this.detectionAreaImage = './assets/noise.jpg';
   }
 
   onMouseMove(position: { x: number, y: number }): void {
@@ -57,7 +59,8 @@ export class PlanetDetectorComponent implements OnInit {
 
   ngOnInit() {
     this.dimensions = this.detectionAreaElement.nativeElement.getBoundingClientRect();
-
+    this.renderer.setStyle(this.detectionAreaElement.nativeElement, 'background-image', `url(${this.detectionAreaImage})`);
+    
     this.PrepareGame();
   }
 

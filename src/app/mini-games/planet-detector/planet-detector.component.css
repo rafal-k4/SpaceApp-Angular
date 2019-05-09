@@ -1,6 +1,5 @@
 #detection-area {
   height: 70vh;
-  background-image: url("/assets/noise.jpg");
   background-size: contain;
 }
 #planet {
